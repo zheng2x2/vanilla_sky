@@ -21,7 +21,7 @@
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
-            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
 
     </nav>
@@ -31,17 +31,24 @@
         const navSlide = () => {
             const burger = document.querySelector('.burger');
             const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav li');
+            const navLinks = document.querySelectorAll('.nav-links li');
 
-            //Toggle Nav
             burger.addEventListener('click', ()=>{
-                nav.classList.toggle('nav-active')
+                //Toggle Nav
+                nav.classList.toggle('nav-active');
+
+                 //Animate Links
+                navLinks.forEach((link, idx) => {
+                    if(link.style.animation){
+                        link.style.animation = '';
+                    }else{
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${idx/3.7725}s`;
+                    }
+                });
+                //Burger Animation
+                burger.classList.toggle('toggle');
             });
-            //Animate Links
-            navLinks.forEach((link, idx) => {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${idx/7}s`;
-                console.log(idx/7)
-            });
+           
         }
         navSlide();
     </script>
