@@ -1,3 +1,6 @@
+import './skycons.js';
+import './config.js';
+import './style.css';
 
 window.addEventListener('load', () => {
     let long;
