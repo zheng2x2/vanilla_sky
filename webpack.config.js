@@ -1,5 +1,8 @@
-const config = {
-
+module.exports = {
+    mode : 'development',
+    entry : './app.js',
+    output : {
+        filename : 'common.js',
+        publicPath : './dist'
+    }
 }
-
-module.export = config;
